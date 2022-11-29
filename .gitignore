@@ -1,0 +1,7 @@
+.vscode
+/node_modules
+/public/js
+/public/css
+/public/build/assets/*
+/vendor
+.env

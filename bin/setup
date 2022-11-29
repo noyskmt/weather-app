@@ -1,0 +1,4 @@
+#!/bin/bash
+composer install
+docker-compose up -d
+docker exec -it bmx_laravel.test_1 bash -c "composer install && cp .env.example .env && php artisan key:generate && npm install && npm run dev"
