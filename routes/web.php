@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\UserController;
+// use App\Http\Controllers;
+use App\Http\Controllers\WeatherAPIController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -13,6 +15,7 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+
 
 // 管理者
 Route::get('/admin', [UserController::class, 'index'])->name('admin');
@@ -31,3 +34,5 @@ Route::middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
 });
+
+Route::get('/', [WeatherAPIController::class, 'weatherData']);
