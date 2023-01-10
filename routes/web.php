@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\UserController;
-// use App\Http\Controllers;
 use App\Http\Controllers\WeatherAPIController;
+use App\Http\Controllers\WeatherController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -36,3 +36,7 @@ Route::middleware([
 });
 
 Route::get('/', [WeatherAPIController::class, 'weatherData']);
+
+// Route::get('/', [TopController::class, 'index']);
+
+Route::get('/', [WeatherController::class, 'index']);
