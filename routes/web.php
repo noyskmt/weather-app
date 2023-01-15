@@ -35,8 +35,9 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/', [WeatherAPIController::class, 'weatherData']);
-
-// Route::get('/', [TopController::class, 'index']);
 
 Route::get('/', [WeatherController::class, 'index']);
+// Route::get('/', [WeatherAPIController::class, 'weatherData'])->name('weatherAPI.data');
+
+// // weathercontrollerを表示させて、検索したらweatherdataを表示させる必要がある。
+// // コントローラーからコントローラーの呼び出し？
