@@ -11,17 +11,16 @@
 <body>
   <div class="container">
     @yield('content')
-    <p>郵便番号入力</p>
-    <form>
-      <span>〒<input type="text" name="postal_code" minlength="7" maxlength="8" pattern="\d*" autocomplete="shipping postal-code" style="width: 80px; height: 25px; padding: 0;"></span>
+    <!-- メソッドにデーターを送信？ -->
+    <form action="" method="get">
+      <span>〒<input type="text" name="post_code" minlength="7" maxlength="8"  style="width: 80px; height: 25px; padding: 0;"></span>
       <input type="submit" name="submit" value="検索" style="width: 40px; height: 20px; font-size: 15px;">
     </form>
   </div>
 
   <!-- 予報結果 -->
   <div class="result">
-    <!-- ここの括弧内が分かりません。。 -->
-    @if ($weather_data='')
+    @if($weather_data === true)
       <table class="table table-dark table-striped">
         <thead>
           <tr>
@@ -34,22 +33,22 @@
           <tr>
             <td>Mark</td>
             <td>Otto</td>
-            <td>@mdo</td>
+            <td>mdo</td>
           </tr>
           <tr>
             <td>Jacob</td>
             <td>Thornton</td>
-            <td>@fat</td>
+            <td>fat</td>
           </tr>
           <tr>
             <td>Larry the Bird</td>
             <td>hoge</td>
-           <td>@twitter</td>
+           <td>twitter</td>
          </tr>
         </tbody>
       </table>
     @else
-      郵便番号をご入力ください。
+      郵便番号をご入力ください
     @endif
   </div>
 </body>

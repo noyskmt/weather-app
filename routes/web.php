@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WeatherAPIController;
-use App\Http\Controllers\WeatherController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -35,9 +34,5 @@ Route::middleware([
     })->name('dashboard');
 });
 
-
-Route::get('/', [WeatherController::class, 'index']);
-// Route::get('/', [WeatherAPIController::class, 'weatherData'])->name('weatherAPI.data');
-
-// // weathercontrollerを表示させて、検索したらweatherdataを表示させる必要がある。
-// // コントローラーからコントローラーの呼び出し？
+Route::get('/', [WeatherAPIController::class, 'index']);
+// Route::get('/', [WeatherAPIController::class, 'weatherData']);
