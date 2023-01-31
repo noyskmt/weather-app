@@ -11,17 +11,18 @@
 <body>
   <div class="container">
     @yield('content')
-    <!-- メソッドにデーターを送信？ -->
     <form action="" method="get">
-      <span>〒<input type="text" name="post_code" minlength="7" maxlength="8"  style="width: 80px; height: 25px; padding: 0;"></span>
+      <span>〒<input type="text" name="zip1" style="width: 35px; height: 25px; padding: 0;"></span>
+      <span>- <input type="text" name="zip2" style="width: 45px; height: 25px; padding: 0;"></span>
       <input type="submit" name="submit" value="検索" style="width: 40px; height: 20px; font-size: 15px;">
     </form>
   </div>
 
   <!-- 予報結果 -->
   <div class="result">
-    @if($weather_data === true)
-      <table class="table table-dark table-striped">
+    @if($weather_data)
+    <P>{{ $weather_data }}</P>
+      <!-- <table class="table table-dark table-striped">
         <thead>
           <tr>
             <th>日付</th>
@@ -46,9 +47,7 @@
            <td>twitter</td>
          </tr>
         </tbody>
-      </table>
-    @else
-      郵便番号をご入力ください
+      </table> -->
     @endif
   </div>
 </body>
