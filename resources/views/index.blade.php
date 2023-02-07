@@ -11,7 +11,7 @@
 <body>
   <div class="container">
     @yield('content')
-    <form action="" method="get">
+    <form action="/search" method="get">
       <span>〒<input type="text" name="zip1" style="width: 35px; height: 25px; padding: 0;"></span>
       <span>- <input type="text" name="zip2" style="width: 45px; height: 25px; padding: 0;"></span>
       <input type="submit" name="submit" value="検索" style="width: 40px; height: 20px; font-size: 15px;">
@@ -21,8 +21,7 @@
   <!-- 予報結果 -->
   <div class="result">
     @if($weather_data)
-    <P>{{ $weather_data }}</P>
-      <!-- <table class="table table-dark table-striped">
+      <table class="table table-dark table-striped">
         <thead>
           <tr>
             <th>日付</th>
@@ -30,24 +29,20 @@
             <th>気温</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>mdo</td>
-          </tr>
-          <tr>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>fat</td>
-          </tr>
-          <tr>
-            <td>Larry the Bird</td>
-            <td>hoge</td>
-           <td>twitter</td>
-         </tr>
-        </tbody>
-      </table> -->
+        @foreach($weather_data as $key1)
+          @foreach($key1 as $key2  => $value1)
+            @foreach($value1 as $key3 => $value2)
+              <tr>
+                <td>{{$value1[8]}}</td>
+                <td> </td>
+                <td>mdo</td>
+              </tr>
+            @endforeach
+          @endforeach
+        @endforeach
+      </table>
+    @else
+      郵便番号をご入力ください  
     @endif
   </div>
 </body>

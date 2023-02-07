@@ -35,4 +35,7 @@ Route::middleware([
 });
 
 Route::get('/', [WeatherAPIController::class, 'index']);
-// Route::get('/', [WeatherAPIController::class, 'weatherData']);
+Route::get('/search', [WeatherAPIController::class, 'search']);
+
+// APIデータ確認用
+// Route::get('/', [WeatherAPIController::class, 'weatherDataa']);
