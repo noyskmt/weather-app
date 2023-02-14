@@ -29,22 +29,24 @@
             <th>気温</th>
           </tr>
         </thead>
-        @foreach($weather_data as $key1)
-          @foreach($key1 as $key2  => $value1)
-            @foreach($value1 as $key3 => $value2)
-              <tr>
-                <td>{{$value1[8]}}</td>
-                <td> </td>
-                <td>mdo</td>
-              </tr>
-            @endforeach
-          @endforeach
+        @foreach($weather_data['list'] as $wd)
+          @foreach($wd['weather'] as $wt)
+            <tr>
+              <td>{{$wd['dt_txt']}}</td>
+               <!-- date_format($wd['dt_txt'], 'n月j日G時' -->
+              <td>{{$wt['description']}}</td>
+              <td>{{ceil($wd['main']['temp'])}}</td>
+            </tr>
+          @endforeach  
         @endforeach
       </table>
     @else
       郵便番号をご入力ください  
     @endif
   </div>
+  <!-- <?php
+  echo date('n月j日 G時');
+  ?> -->
 </body>
 
 </html>
