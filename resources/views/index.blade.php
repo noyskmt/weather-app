@@ -32,10 +32,9 @@
         @foreach($weather_data['list'] as $wd)
           @foreach($wd['weather'] as $wt)
             <tr>
-              <td>{{$wd['dt_txt']}}</td>
-               <!-- date_format($wd['dt_txt'], 'n月j日G時' -->
+              <td>{{\Carbon\Carbon::createFromTimeString($wd['dt_txt'])->format('n/d G:i')}}</td>
               <td>{{$wt['description']}}</td>
-              <td>{{ceil($wd['main']['temp'])}}</td>
+              <td>{{round($wd['main']['temp'])}}℃</td>
             </tr>
           @endforeach  
         @endforeach
