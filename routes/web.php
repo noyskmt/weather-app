@@ -39,3 +39,4 @@ Route::get('/search', [WeatherAPIController::class, 'search']);
 
 // APIデータ確認用
 // Route::get('/', [WeatherAPIController::class, 'weatherDataa']);
+// Route::get('/', [WeatherAPIController::class, 'zipcodee']);

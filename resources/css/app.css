@@ -3,18 +3,25 @@
 @tailwind utilities;
 
 body {
-    width: 90%;
+    width: 70%;
     margin: 2rem auto;
 }
 
 .container {
-    margin: 1rem auto;
+    margin: 2rem auto;
 }
 
 p {
     font-size: 13px;
 }
 
+table {
+    text-align: center;
+}
+
+.postcode {
+    margin: 2rem auto;
+}
 
 .div table { 
     width: 80%;
@@ -26,6 +33,7 @@ p {
     border-color: black;
 }
 
+
 .table thead th {
     color: black;
     background-color: lightgrey;
@@ -33,4 +41,8 @@ p {
 
 td {
     color: white;
+}
+
+.table th:not([align]) {
+    text-align: center;
 }

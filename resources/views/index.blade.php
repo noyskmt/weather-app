@@ -20,6 +20,14 @@
 
   <!-- 予報結果 -->
   <div class="result">
+    <div class="postcode">
+      @if($zipcode_data)
+        @foreach($zipcode_data['results'] as $zc)
+          {{$zc['address2']}}{{$zc['address3']}}の天気
+        @endforeach
+      @endif
+    </div>
+    
     @if($weather_data)
       <table class="table table-dark table-striped">
         <thead>
@@ -36,16 +44,13 @@
               <td>{{$wt['description']}}</td>
               <td>{{round($wd['main']['temp'])}}℃</td>
             </tr>
-          @endforeach  
+          @endforeach
         @endforeach
       </table>
     @else
       郵便番号をご入力ください  
     @endif
   </div>
-  <!-- <?php
-  echo date('n月j日 G時');
-  ?> -->
 </body>
 
 </html>

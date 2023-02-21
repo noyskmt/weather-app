@@ -34,6 +34,10 @@ return [
     'openweathermap' => [
         'key' => env('OPEN_WHATHER_MAP_API_KEY'),
         'url' => env('OPEN_WHATHER_MAP_URL'),
-    ]
+    ],
+
+    'zipcloud' => [
+        'url' => env('ZIP_CLOUD_URL'),
+    ],
 
 ];
